@@ -22,6 +22,8 @@ class MainClass {
 
     cut = (200 + (0.09*sale));
 
+        //I decided to make the sales person's performance and their commission be a single output.
+        
         if (sale<2999){
           Console.WriteLine("The commission for " + name + " is: "+ cut + " meaning that " + name + " has poor performance.");
         }else if(sale > 3000 && sale < 4999){
