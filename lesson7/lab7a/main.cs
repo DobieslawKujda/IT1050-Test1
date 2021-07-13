@@ -18,9 +18,9 @@ class MainClass {
 
             bool loopy = true;
 
-            cstmrs.Add("customer 1");
-            cstmrs.Add("customer 2");
-            cstmrs.Add("customer 3");
+            cstmrs.Add("Joe");
+            cstmrs.Add("Ellie");
+            cstmrs.Add("GUEST");
 
             hours.Add(2);
             hours.Add(1);
@@ -52,6 +52,24 @@ class MainClass {
                     pricettl++;
                   }
                 }
+
+              int cnt = 0;
+              double[] hrs = hours.ToArray();
+
+              foreach(string z in cstmrs){
+                
+                Console.WriteLine(z + " parked for: ");
+                
+                if(hrs[cnt] >= 24){
+                    Console.WriteLine(hrs[cnt] + " hours. The sale was $10.00 .");
+                  }else if(hrs[cnt] > 3){
+                    prc = ((hrs[cnt] - 3)*0.5)+2.00;
+                    Console.WriteLine(hrs[cnt] + " hours. The sale was $" + prc + " .");
+                  }else{
+                    Console.WriteLine(hrs[cnt] + " hours. The sale was $2.00 .");
+                  }
+                cnt++;
+              }
 
               Console.WriteLine("The sale total for the day is: $" + pricettl);
 
